@@ -10,13 +10,26 @@
     <title>breathing_manager</title>
   </head>
   <body>
-	<div class="container">
-		<h1>～自分の呼吸に集中する～</h1>
-	</div>
-
+	<main class="m-4">
+		<div class="container">
+			<h1 class="text-center">～自分の呼吸に集中する～</h1>
+			<div class="text-center">
+				<p>さぁ、自分の呼吸に意識を向けよう</p>
+				<p>呼吸を整えることで心と体が整います</p>
+			</div>
+			<div class="center">
+				<select name="sources" id="sources" class="custom-select sources" placeholder="Source Type">
+				  <option value="profile">Profile</option>
+				  <option value="word">Word</option>
+				  <option value="hashtag">Hashtag</option>
+				</select>
+			</div>
+		</div>
+	</main>
+	
 	<!-- bootstrap & jquery -->
 	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/bootstrap.min.js"></script> 
+	<script src="js/bootstrap.bundle.min.js"></script> 
+	<script src="js/script.js"></script>
   </body>
 </html>
