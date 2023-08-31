@@ -1,112 +1,106 @@
-.center {
-	position: absolute;
-	display: inline-block;
-	top: 50%; left: 50%;
-	transform: translate(-50%, -50%);
+* {
+	outline: 0;
+	font-family: sans-serif
 }
 
-/** Custom Select **/
-.custom-select-wrapper {
-	position: relative;
-	display: inline-block;
-	user-select: none;
+body {
+	background-color: #fafafa
 }
-.custom-select-wrapper select {
+
+span.msg,
+span.choose {
+	color: #555;
+	padding: 5px 0 10px;
+	display: inherit
+}
+
+.container {
+	width: 500px;
+	margin: 50px auto 0;
+	text-align: center
+}
+
+/*Styling Selectbox*/
+.dropdown {
+	width: 200px;
+	display: inline-block;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 2px rgb(204, 204, 204);
+	transition: all .5s ease;
+	position: relative;
+	font-size: 14px;
+	color: #474747;
+	height: 100%;
+	text-align: left
+}
+
+.dropdown .select {
+	cursor: pointer;
+	display: block;
+	padding: 10px
+}
+
+.dropdown .select>i {
+	font-size: 13px;
+	color: #888;
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+	float: right;
+	line-height: 20px
+}
+
+.dropdown:hover {
+	box-shadow: 0 0 4px rgb(204, 204, 204)
+}
+
+.dropdown:active {
+	background-color: #f8f8f8
+}
+
+.dropdown.active:hover,
+.dropdown.active {
+	box-shadow: 0 0 4px rgb(204, 204, 204);
+	border-radius: 2px 2px 0 0;
+	background-color: #f8f8f8
+}
+
+.dropdown.active .select>i {
+	transform: rotate(-90deg)
+}
+
+.dropdown .dropdown-menu {
+	font-size: 12px;
+	color: #888;
+	position: absolute;
+	background-color: #fff;
+	width: 100%;
+	left: 0;
+	margin-top: 1px;
+	box-shadow: 0 1px 2px rgb(204, 204, 204);
+	border-radius: 2px 2px 5px 5px;
+	overflow: hidden;
 	display: none;
+	max-height: 144px;
+	overflow-y: auto;
+	z-index: 9
 }
-.custom-select {
-	position: relative;
-	display: inline-block;
+
+.dropdown .dropdown-menu li {
+	padding: 10px;
+	transition: all .2s ease-in-out;
+	cursor: pointer
 }
-.custom-select-trigger {
-	position: relative;
-	display: block;
-	width: 130px;
-	padding: 0 84px 0 22px;
-	font-size: 22px;
-	font-weight: 300;
-	color: #fff;
-	line-height: 60px;
-	background: #5c9cd8;
-	border-radius: 4px;
-	cursor: pointer;
+
+.dropdown .dropdown-menu {
+	padding: 0;
+	list-style: none
 }
-.custom-select-trigger:after {
-	position: absolute;
-	display: block;
-	content: '';
-	width: 10px; height: 10px;
-	top: 50%; right: 25px;
-	margin-top: -3px;
-	border-bottom: 1px solid #fff;
-	border-right: 1px solid #fff;
-	transform: rotate(45deg) translateY(-50%);
-	transition: all .4s ease-in-out;
-	transform-origin: 50% 0;
+
+.dropdown .dropdown-menu li:hover {
+	background-color: #f2f2f2
 }
-.custom-select.opened .custom-select-trigger:after {
-	margin-top: 3px;
-	transform: rotate(-135deg) translateY(-50%);
-}
-.custom-options {
-	position: absolute;
-	display: block;
-	top: 100%; left: 0; right: 0;
-	min-width: 100%;
-	margin: 15px 0;
-	border: 1px solid #b5b5b5;
-	border-radius: 4px;
-	box-sizing: border-box;
-	box-shadow: 0 2px 1px rgba(0,0,0,.07);
-	background: #fff;
-	transition: all .4s ease-in-out;
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
-	transform: translateY(-15px);
-}
-.custom-select.opened .custom-options {
-	opacity: 1;
-	visibility: visible;
-	pointer-events: all;
-	transform: translateY(0);
-}
-.custom-options:before {
-	position: absolute;
-	display: block;
-	content: '';
-	bottom: 100%; right: 25px;
-	width: 7px; height: 7px;
-	margin-bottom: -4px;
-	border-top: 1px solid #b5b5b5;
-	border-left: 1px solid #b5b5b5;
-	background: #fff;
-	transform: rotate(45deg);
-	transition: all .4s ease-in-out;
-}
-.option-hover:before {
-	background: #f9f9f9;
-}
-.custom-option {
-	position: relative;
-	display: block;
-	padding: 0 22px;
-	border-bottom: 1px solid #b5b5b5;
-	font-size: 18px;
-	font-weight: 600;
-	color: #b5b5b5;
-	line-height: 47px;
-	cursor: pointer;
-	transition: all .4s ease-in-out;
-}
-.custom-option:first-of-type {
-	border-radius: 4px 4px 0 0;
-}
-.custom-option:last-of-type {
-	border-bottom: 0;
-	border-radius: 0 0 4px 4px;
-}
-.custom-option:hover,
-.custom-option.selection {
-	background: #f9f9f9;
+
+.dropdown .dropdown-menu li:active {
+	background-color: #e2e2e2
 }
